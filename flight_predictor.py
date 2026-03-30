@@ -58,5 +58,5 @@ if st.button("Predict Flight Price"):
     
     # Show result
     #st.success(f"The predicted fare is: ₹{price:,.2f}")
-    final_number= float(price)
+    final_number= float(price.item())
     st.success(f"The predicted fare is: ₹{final_number:,.2f}")

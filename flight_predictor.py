@@ -57,4 +57,5 @@ if st.button("Predict Flight Price"):
     price = model.predict(input_final)
     
     # Show result
-    st.success(f"The predicted fare is: ₹{price:,.2f}")
+    #st.success(f"The predicted fare is: ₹{price:,.2f}")
+    st.success(f"The predicted fare is: ₹{price'':,.2f}")

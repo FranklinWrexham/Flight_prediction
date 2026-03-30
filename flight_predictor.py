@@ -58,4 +58,5 @@ if st.button("Predict Flight Price"):
     
     # Show result
     #st.success(f"The predicted fare is: ₹{price:,.2f}")
-    st.success(f"The predicted fare is: ₹{price'':,.2f}")
+    price_value = float(prediction)
+    st.success(f"The predicted fare is: ₹{price:,.2f}")

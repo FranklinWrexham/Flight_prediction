@@ -45,7 +45,7 @@ if st.button("Predict Flight Price"):
     
     # Apply mappings
     stops_map = {'non-stop': 0, '1-stop': 1, '2+-stop': 2}
-    class_map = {'Economy': 0, 'Premium Economy': 1', 'Business': 2, 'First':3}
+    class_map = {'Economy': 0, 'Premium Economy': 1, 'Business': 2, 'First':3}
     input_df['Total_stops'] = input_df['Total_stops'].map(stops_map)
     input_df['Class'] = input_df['Class'].map(class_map)
     

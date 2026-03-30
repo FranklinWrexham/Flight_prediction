@@ -19,7 +19,7 @@ with col1:
     stops = st.selectbox("Stops", ['non-stop', '1-stop', '2+-stop'])
 
 with col2:
-    travel_class = st.selectbox("Class", ['Economy', 'Business'])
+    travel_class = st.selectbox("Class", ['Economy', 'Premium Economy', 'Business', 'First'])
     duration = st.number_input("Duration (Hours)", min_value=0.5, max_value=50.0, value=2.5)
     days_left = st.number_input("Days Left until Flight", min_value=1, max_value=50, value=10)
     day = st.slider("Day of Journey", 1, 31, 15)

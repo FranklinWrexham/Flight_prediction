@@ -70,9 +70,11 @@ if st.button("Predict Flight Price"):
     # Encode and Align
     input_encoded = pd.get_dummies(input_df)
     input_final = input_encoded.reindex(columns=model_columns, fill_value=0)
+
+    input_scaled = scaler.transform(input_final)
     
     # Predict
-    price = model.predict(input_final)
+    price = model.predict(input_scaled)
     
     # Show result
     #st.success(f"The predicted fare is: ₹{price:,.2f}")

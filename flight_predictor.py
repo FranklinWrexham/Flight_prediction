@@ -3,6 +3,8 @@ import pandas as pd
 import joblib
 from datetime import date # Add this at the top with your imports
 
+joblib.dump(scaler, 'scaler.pkl')
+
 
 # 1. Load the "Saved Brain" and the "Map"
 model = joblib.load('flight_price_model.pkl')
@@ -30,6 +32,13 @@ with col2:
     days_left = (travel_date - today).days
     day = travel_date.day
     month = travel_date.month
+
+    # Add this where you calculate days_left
+day_of_week = travel_date.weekday() # 0 is Monday, 5 is Saturday, 6 is Sunday
+is_weekend = 1 if day_of_week >= 5 else 0
+
+# Then, make sure your model_columns actually includes a 'is_weekend' 
+# or 'day_of_week' feature if you trained with one.
 
     st.info(f"Calculated Days Left: {days_left}")
 

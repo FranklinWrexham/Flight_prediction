@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import joblib
+from datetime import date # Add this at the top with your imports
+
 
 # 1. Load the "Saved Brain" and the "Map"
 model = joblib.load('flight_price_model.pkl')
@@ -21,9 +23,16 @@ with col1:
 with col2:
     travel_class = st.selectbox("Class", ['Economy', 'Premium Economy', 'Business', 'First'])
     duration = st.number_input("Duration (Hours)", min_value=0.5, max_value=50.0, value=2.5)
-    days_left = st.number_input("Days Left until Flight", min_value=1, max_value=50, value=10)
-    day = st.slider("Day of Journey", 1, 31, 15)
-    month = st.slider("Month of Journey", 1, 12, 5)
+    travel_date = st.date_input("Select Date of Journey", min_value=date.today())
+
+   # AUTOMATIC CALCULATIONS
+    today = date.today()
+    days_left = (travel_date - today).days
+    day = travel_date.day
+    month = travel_date.month
+
+    st.info(f"Calculated Days Left: {days_left}")
+
 
 # 3. The Prediction Logic (Your code goes here)
 if st.button("Predict Flight Price"):

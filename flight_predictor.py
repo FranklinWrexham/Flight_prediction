@@ -40,7 +40,7 @@ is_weekend = 1 if day_of_week >= 5 else 0
 # Then, make sure your model_columns actually includes a 'is_weekend' 
 # or 'day_of_week' feature if you trained with one.
 
-    st.info(f"Calculated Days Left: {days_left}")
+st.info(f"Calculated Days Left: {days_left}")
 
 
 # 3. The Prediction Logic (Your code goes here)

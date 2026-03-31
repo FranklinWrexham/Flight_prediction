@@ -3,12 +3,10 @@ import pandas as pd
 import joblib
 from datetime import date # Add this at the top with your imports
 
-joblib.dump(scaler, 'scaler.pkl')
-
-
 # 1. Load the "Saved Brain" and the "Map"
 model = joblib.load('flight_price_model.pkl')
 model_columns = joblib.load('model_columns.pkl')
+scaler = joblib.load('scaler.pkl')
 
 st.title("✈️ Flight Fare Prediction App")
 st.markdown("Enter the flight details below to get an estimated price.")

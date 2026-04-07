@@ -85,9 +85,9 @@ if st.button("Predict Flight Price"):
     # Predict
     prediction = model.predict(input_scaled)
     try:
-        final_number = price.item()
+        final_number = prediction.item()
     except:
         # Fallback if it's a standard numpy array
-        final_number = float(price)
+        final_number = float(prediction)
     
     st.success(f"The predicted fare is: ₹{final_number:,.2f}")

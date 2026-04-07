@@ -47,7 +47,7 @@ st.info(f"Calculated Days Left: {days_left}")
 # 3. The Prediction Logic (Your code goes here)
 if st.button("Predict Flight Price"):
     # Create the dictionary from user inputs
-   new_flight = {
+    new_flight = {
     'Airline': airline,
     'Source': source,
     'Destination': destination,
@@ -62,7 +62,7 @@ if st.button("Predict Flight Price"):
 }
     
     # Process inputs
-   input_df = pd.DataFrame([new_flight])
+    input_df = pd.DataFrame([new_flight])
     
     # Apply mappings
     stops_map = {'non-stop': 0, '1-stop': 1, '2+-stop': 2}

@@ -87,9 +87,9 @@ input_final = input_encoded.reindex(columns=model_columns, fill_value=0)
 input_scaled = scaler.transform(input_final)
     
     # Predict
-    price = model.predict(input_scaled)
+price = model.predict(input_scaled)
     
     # Show result
     #st.success(f"The predicted fare is: ₹{price:,.2f}")
-    final_number= float(price[0][0])
-    st.success(f"The predicted fare is: ₹{final_number:,.2f}")
+final_number= float(price[0][0])
+st.success(f"The predicted fare is: ₹{final_number:,.2f}")

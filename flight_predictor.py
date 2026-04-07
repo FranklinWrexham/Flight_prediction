@@ -98,7 +98,7 @@ if st.button("Predict Flight Price"):
         st.caption("✨ Weekend surge pricing applied (+15%)")
     else:
         # Optional: Give a small discount for mid-week travel (Tue/Wed)
-        if travel_date.weekday().in:
+        if travel_date.weekday() in:
             final_number = final_number * 0.95
             st.caption("📉 Mid-week discount applied (-5%)")
     

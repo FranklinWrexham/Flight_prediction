@@ -81,10 +81,10 @@ dep_value = time_map[dep_time]
 arr_value = time_map[arr_time]
     
     # Encode and Align
-    input_encoded = pd.get_dummies(input_df)
-    input_final = input_encoded.reindex(columns=model_columns, fill_value=0)
+input_encoded = pd.get_dummies(input_df)
+input_final = input_encoded.reindex(columns=model_columns, fill_value=0)
 
-    input_scaled = scaler.transform(input_final)
+input_scaled = scaler.transform(input_final)
     
     # Predict
     price = model.predict(input_scaled)

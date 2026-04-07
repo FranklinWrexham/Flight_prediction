@@ -64,8 +64,8 @@ if st.button("Predict Flight Price"):
         'Days_left': days_left,
         'Journey_day': day,
         'Journey_month': month,
-        'Departure_Time': dep_value, 
-        'Arrival_Time': arr_value    
+        'Departure_Rank': dep_value, 
+        'Arrival_Rank': arr_value    
     }
     
     # Convert to DataFrame

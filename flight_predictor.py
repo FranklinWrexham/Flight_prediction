@@ -89,5 +89,17 @@ if st.button("Predict Flight Price"):
     except:
         # Fallback if it's a standard numpy array
         final_number = float(prediction)
+
+    # 2. APPLY WEEKEND SURGE LOGIC
+    # travel_date.weekday() returns 5 for Saturday and 6 for Sunday
+    if travel_date.weekday() >= 5:
+        # Increase price by 15% (multiplier of 1.15)
+        final_number = final_number * 1.15
+        st.caption("✨ Weekend surge pricing applied (+15%)")
+    else:
+        # Optional: Give a small discount for mid-week travel (Tue/Wed)
+        if travel_date.weekday() in:
+            final_number = final_number * 0.95
+            st.caption("📉 Mid-week discount applied (-5%)")
     
     st.success(f"The predicted fare is: ₹{final_number:,.2f}")

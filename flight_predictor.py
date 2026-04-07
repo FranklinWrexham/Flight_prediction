@@ -20,13 +20,14 @@ with col1:
     destination = st.selectbox("Destination City", ['Mumbai', 'Delhi', 'Bangalore', 'Kolkata', 'Hyderabad', 'Chennai'])
     stops = st.selectbox("Stops", ['non-stop', '1-stop', '2+-stop'])
     dep_time = st.selectbox("Departure Time", ['Before 6 AM', '6 AM - 12 PM', '12 PM - 6 PM', 'After 6 PM'])
+    arr_time = st.selectbox("Arrival Time", ['Before 6 AM', '6 AM - 12 PM', '12 PM - 6 PM', 'After 6 PM'])
 
 
 with col2:
     travel_class = st.selectbox("Class", ['Economy', 'Premium Economy', 'Business', 'First'])
     duration = st.number_input("Duration (Hours)", min_value=0.5, max_value=50.0, value=2.5)
     travel_date = st.date_input("Select Date of Journey", min_value=date.today())
-    arr_time = st.selectbox("Arrival Time", ['Before 6 AM', '6 AM - 12 PM', '12 PM - 6 PM', 'After 6 PM'])
+    
     
    # AUTOMATIC CALCULATIONS
     today = date.today()

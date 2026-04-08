@@ -9,7 +9,7 @@ model_columns = joblib.load('model_columns.pkl')
 scaler = joblib.load('scaler.pkl')
 
 # Define Mappings at the TOP so they are always ready
-stops_map = {'non-stop': 0, '1-stop': 1, '2+-stop': 2}
+stops_map = {'2+-stop': 0,'1-stop': 1, 'non-stop': 2 }
 class_map = {'Economy': 0, 'Premium Economy': 1, 'Business': 2, 'First': 3}
 time_map = {
     'Before 6 AM': 1,
